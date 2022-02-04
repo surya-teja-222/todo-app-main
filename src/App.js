@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 
 import darkPC from './assets/bg-desktop-dark.jpg'
 import lightPC from './assets/bg-desktop-light.jpg'
@@ -68,6 +68,12 @@ function App() {
                 setTodos(JSON.parse(x));
                 localStorage.setItem('todos', x);
             };
+            
+        }, []
+    );
+
+    useLayoutEffect(
+        () => {
             if(localStorage.getItem('method'))
             {
                 setMethod(localStorage.getItem('method'));
@@ -76,8 +82,8 @@ function App() {
                 localStorage.setItem('method', 'all');
                 setMethod('all');
             }
-        }, []
-    );
+        }
+    )
 
     useEffect(() => {
         document.getElementById('input').addEventListener('keyup', (e) => {
@@ -121,6 +127,10 @@ function App() {
         if(x){
             document.getElementById('items-left').innerHTML = x.Unfinished.length + ' items left';
         }
+        if(method)
+        {
+            document.getElementById(method).style.color = 'hsl(220,98%,61%)';
+        }
     }, [todos])
 
 
@@ -131,7 +141,7 @@ function App() {
 
         return (
             <>
-                <div id={key} key={key} className={cl}>
+                <div id={key+'u'} key={key} className={cl}>
                     <div
                         onClick={() => {
                             var tod = JSON.parse(localStorage.getItem('todos'));
@@ -177,7 +187,7 @@ function App() {
         }
         return (
             <>
-                <div id={key} key={key} className={cl}>
+                <div id={key+'f'} key={key} className={cl}>
                     <div
                         onClick={
                             () => {
@@ -303,7 +313,7 @@ function App() {
 
     return (
         <div className="App ">
-            <header role={'banner'} className="App-header">
+            <header className="App-header">
                 <div className='w-full h-full absolute -z-10 dark:bg-[#181824] bg-[#fafafa] transition-all duration-500 ease-in-out'>
                     <div className='h-2/5  w-full absolute'>
                         <img id="pcbg" alt='bg  desktop' className='darkk smm:opacity-0  absolute transition-all ease-out duration-500 w-full h-full ' src={darkPC} />
@@ -312,7 +322,7 @@ function App() {
                 </div>
             </header>
 
-            <main role={'main'} className='z-50 w-full h-full  fixed  overflow-y-auto'>
+            <main className='z-50 w-full h-full  fixed  overflow-y-auto'>
                 <div className='w-full h-full grid md:grid-cols-main-c   mdm:grid-cols-main-cm justify-center self-center'>
                     <div></div>
                     <div className='w-full h-full  font-josefin text-[18px]'>
@@ -364,6 +374,7 @@ function App() {
                             {setListItems(todos , method)}
                         </div>
                         <div className='h-[50px]'></div>
+                        <p className='text-sm justify-center text-center text-[#494c6d]'>Drag and drop to reorder list</p>
                     </div>
                     <div></div>
                 </div>
