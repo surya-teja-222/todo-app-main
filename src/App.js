@@ -90,7 +90,7 @@ function App() {
     useEffect(() => {
         document.getElementById('input').addEventListener('keyup', (e) => {
             if (e.keyCode === 13) {
-                if (e.target.value !== '') {
+                if (e.target.value !== '' || e.target.value != null) {
                     if (localStorage.getItem('todos')) {
                         var tod = JSON.parse(localStorage.getItem('todos'));
                     }
