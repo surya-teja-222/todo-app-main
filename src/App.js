@@ -88,6 +88,19 @@ function App() {
     
 
     useEffect(() => {
+        var x = JSON.parse(localStorage.getItem('todos'));
+        if(x){
+            document.getElementById('items-left').innerHTML = x.Unfinished.length + ' items left';
+        }
+        if(method)
+        {
+            document.getElementById(method).style.color = 'hsl(220,98%,61%)';
+        }
+    }, [todos])
+
+
+
+    useEffect(() => {
         document.getElementById('input').addEventListener('keyup', (e) => {
             if (e.keyCode === 13) {
                 if (e.target.value !== '' || e.target.value != null) {
@@ -117,23 +130,8 @@ function App() {
         })
     }, [])
 
-    useEffect(() => {
-        if(method)
-        {
-            document.getElementById(method).style.color = 'hsl(220,98%,61%)';
-        }
-    } , [method] )
 
-    useEffect(() => {
-        var x = JSON.parse(localStorage.getItem('todos'));
-        if(x){
-            document.getElementById('items-left').innerHTML = x.Unfinished.length + ' items left';
-        }
-        if(method)
-        {
-            document.getElementById(method).style.color = 'hsl(220,98%,61%)';
-        }
-    }, [todos])
+
 
 
 
@@ -316,7 +314,7 @@ function App() {
     return (
         <div className="App ">
             <header className="App-header">
-                <div className='w-full h-full absolute -z-10 dark:bg-[#181824] bg-[#fafafa] transition-all duration-500 ease-in-out'>
+                <div className='w-full h-full absolute -z-10 dark:bg-[#181824] bg-[#fafafa] transition-all duration-75 ease-in-out'>
                     <div className='h-2/5  w-full absolute'>
                         <img id="pcbg" alt='bg  desktop' className='darkk smm:opacity-0  absolute transition-all ease-out duration-500 w-full h-full ' src={darkPC} />
                         <img id="mob-bg" alt="bg  mobile" className='darkk sm:opacity-0 absolute transition-all ease-out duration-500  h-full w-full' src={darkM} />
