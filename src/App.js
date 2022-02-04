@@ -139,7 +139,7 @@ function App() {
 
     const block = (key, event, index) => {
 
-        var cl = 'group w-full flex gap-[1rem] px-4 min-h-14 h-14 bg-[#ffffff] dark:bg-[#25273c]  transition-all duration-500 ease-in-out';
+        var cl = 'group w-full flex gap-[1rem] px-4 min-h-16 h-16 bg-[#ffffff] dark:bg-[#25273c]  transition-all duration-500 ease-in-out';
 
         return (
             <>
@@ -182,10 +182,10 @@ function App() {
 
     const unfinishedBlock = (key, event, index) => {
         if (key === 1) {
-            var cl = 'group w-full flex gap-[1rem] px-4 h-14 bg-[#ffffff] dark:bg-[#25273c] rounded-t-[5px] transition-all duration-500 ease-in-out';
+            var cl = 'group w-full flex gap-[1rem] px-4 h-16 bg-[#ffffff] dark:bg-[#25273c] rounded-t-[5px] transition-all duration-500 ease-in-out';
         }
         else {
-            var cl = 'group w-full flex gap-[1rem] px-4 h-14 bg-[#ffffff] dark:bg-[#25273c]  transition-all duration-500 ease-in-out';
+            var cl = 'group w-full flex gap-[1rem] px-4 h-16 bg-[#ffffff] dark:bg-[#25273c]  transition-all duration-500 ease-in-out';
         }
         return (
             <>
@@ -328,8 +328,8 @@ function App() {
                 <div className='w-full h-full grid md:grid-cols-main-c   mdm:grid-cols-main-cm justify-center self-center'>
                     <div></div>
                     <div className='w-full h-full  font-josefin text-[18px]'>
-                        <div className='flex justify-between mt-16'>
-                            <h1 aria-level={1} className='font-bold text-[30px] leading-10 text-white tracking-[.5rem]'>
+                        <div className='flex justify-between mt-20'>
+                            <h1 aria-level={1} className='font-bold text-[48px] leading-10 text-white tracking-[.5rem]'>
                                 TODO
                             </h1>
                             <div className='w-[26px] h-[26px]' onClick={
@@ -359,7 +359,7 @@ function App() {
                             </div>
                         </div>
 
-                        <div id="currently-typing" className='mt-8 w-full flex gap-[1rem] px-4 h-12 bg-[#ffffff] dark:bg-[#25273c] rounded-[5px] transition-all duration-500 ease-in-out'>
+                        <div id="currently-typing" className='mt-8 w-full flex gap-[1rem] px-4 h-16 bg-[#ffffff] dark:bg-[#25273c] rounded-[5px] transition-all duration-500 ease-in-out'>
                             <div className='my-auto w-[20px] h-[18px] border-[#eeeef0] dark:border-[#494c6d] border-2 rounded-full'>
                             </div>
                             <div className='my-auto w-full h-6'>
