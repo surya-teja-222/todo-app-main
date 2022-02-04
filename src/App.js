@@ -11,6 +11,19 @@ function App() {
     const [todos, setTodos] = useState([]);
     const [method , setMethod] = useState('all');
 
+
+    useEffect(
+        () => {
+            if(localStorage.getItem('method'))
+            {
+                setMethod(localStorage.getItem('method'));
+            }
+            else{
+                localStorage.setItem('method', 'all');
+                setMethod('all');
+            }
+        }
+    )
     // 1st use effect for validating theme.
     useEffect(
         () => {
@@ -72,18 +85,7 @@ function App() {
         }, []
     );
 
-    useLayoutEffect(
-        () => {
-            if(localStorage.getItem('method'))
-            {
-                setMethod(localStorage.getItem('method'));
-            }
-            else{
-                localStorage.setItem('method', 'all');
-                setMethod('all');
-            }
-        }
-    )
+    
 
     useEffect(() => {
         document.getElementById('input').addEventListener('keyup', (e) => {
