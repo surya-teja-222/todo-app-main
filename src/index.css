@@ -2,45 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
- 
-
-
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
 
 /* border-[#eeeef0] dark:border-[#494c6d] border-2 rounded-full */
 
-
-.linear-gradient{
-    border-color: #494c6d;
-    border-width: 2px;
-    border-radius: 9999px;
+.linear-gradient {
+  border-color: #494c6d;
+  border-width: 2px;
+  border-radius: 9999px;
 }
 
-.linear-gradient-nh{
-    border-color: #494c6d;
-    border-width: 2px;
-    border-radius: 9999px;
-    border-radius: 99999px;
-    border : 2px solid transparent;
-    background : linear-gradient(-45deg , #ab7af8, #74c6ff ) border-box;
+.linear-gradient-nh {
+  border-color: #494c6d;
+  border-width: 2px;
+  border-radius: 9999px;
+  border-radius: 99999px;
+  border: 2px solid transparent;
+  background: linear-gradient(-45deg, #ab7af8, #74c6ff) border-box;
 }
 
-.linear-gradient:hover
-{
-    border-radius: 99999px;
-    border : 2px solid transparent;
-    background : linear-gradient(-45deg , #ab7af8, #74c6ff ) border-box;
+.linear-gradient:hover {
+  border-radius: 99999px;
+  border: 2px solid transparent;
+  background: linear-gradient(-45deg, #ab7af8, #74c6ff) border-box;
 }
 
-
-
-.linear-gradient-exc{
-    -webkit-mask: 
-        linear-gradient(#fff  0 0 ) padding-box,
-        linear-gradient(#fff  0 0 ) ;
-    -webkit-mask-composite: xor;
-        mask-composite: exclude;
+.linear-gradient-exc {
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
 }
-
