@@ -148,7 +148,7 @@ function App() {
             className=" linear-gradient-exc linear-gradient hmhmm my-auto  h-[20px] w-[24px]  cursor-pointer"
           ></div>
           <div className="my-auto h-6 w-full">
-            <p className="h-6  w-full  cursor-pointer bg-inherit font-normal text-[hsl(235,19%,35%)] outline-none transition-all duration-500 ease-in-out dark:text-[hsl(234,39%,85%)] dark:hover:text-[hsl(236,33%,92%)]">
+            <p className="h-6  w-full  cursor-pointer bg-inherit font-normal text-[hsl(235,19%,35%)] outline-none transition-all duration-500 ease-in-out dark:text-[hsl(234,39%,85%)] dark:hover:text-[hsl(236,33%,92%)]  mdm:text-sm flex flex-col justify-center">
               {event}
             </p>
           </div>
@@ -210,7 +210,7 @@ function App() {
             </svg>
           </div>
           <div className="my-auto h-6 w-full">
-            <p className="h-6 w-full  cursor-pointer bg-inherit font-normal text-[#9f9f9f] line-through  outline-none transition-all duration-500 ease-in-out dark:text-[#4e5065]">
+            <p className="h-6 w-full  cursor-pointer bg-inherit font-normal text-[#9f9f9f] line-through  outline-none transition-all duration-500 ease-in-out dark:text-[#4e5065] mdm:text-sm flex flex-col justify-center">
               {event}
             </p>
           </div>
@@ -246,7 +246,7 @@ function App() {
             items left
           </div>
         </div>
-        <div className="my-auto flex h-full justify-center gap-2 self-center  align-middle text-sm">
+        <div className="my-auto flex h-full justify-center gap-2 self-center  align-middle text-sm mdm:hidden">
           <div
             id="all"
             className="flex h-full cursor-pointer flex-col justify-center text-[#494c6d] transition-all  duration-300 ease-in-out hover:text-black hover:dark:text-[#ffffff] "
@@ -434,10 +434,11 @@ function App() {
 
             <div className="h-[30px] w-full"></div>
             <div id="hmm">{setListItems(todos, method)}</div>
-            <div className="h-[50px]"></div>
+            <div className="h-[48px] "></div>
             <p className="justify-center text-center text-sm text-[#494c6d]">
               Drag and drop to reorder list
             </p>
+            <div className="h-[50px] "></div>
           </div>
           <div></div>
         </div>
